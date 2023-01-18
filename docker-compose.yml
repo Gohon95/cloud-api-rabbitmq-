@@ -1,0 +1,43 @@
+version: "3.1"
+
+services:
+  api-cloud-back:
+    build: .
+    image: "cloud-api"
+    container_name: api-cloud-back
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - api-cloud-db
+    networks:
+      - api-network
+    command: npm start
+
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  api-cloud-db:
+    container_name: api-cloud-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - api-cloud-db:/var/lib/postgresql/data
+    networks:
+      - api-network
+
+volumes:
+  api-cloud-db:
+    name: api-cloud-db
+
+networks:
+  api-network:
+    driver: bridge

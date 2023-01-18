@@ -1,0 +1,13 @@
+# node modules
+node_modules
+
+# generated folders and files
+src/docs/*.yml
+upload/
+logs/
+*.log
+.DS_Store
+
+# env file
+.env
+.DS_Store

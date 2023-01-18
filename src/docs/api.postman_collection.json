@@ -1,0 +1,720 @@
+{
+  "info": {
+    "_postman_id": "b8bca5ff-f6fe-4e0e-8cd4-0d77db42d980",
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6406235"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"access\", jsonData.access.token);",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"admin@mail.com\",\n    \"password\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/auth/login",
+              "host": ["{{url}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": [
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"admin@mail.com\",\n    \"password\": \"admin\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/auth/login",
+                  "host": ["{{url}}"],
+                  "path": ["auth", "login"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"id\": \"23bfdbaa-0dd1-41a5-9893-ec3153cb6b49\",\n        \"pseudo\": \"lol ok\",\n        \"email\": \"admin@mail.com\",\n        \"pictureUrl\": null,\n        \"role\": \"admin\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"createdAt\": \"2022-12-06T16:34:46.936Z\",\n        \"updatedAt\": \"2022-12-12T15:35:49.227Z\",\n        \"id_status\": 0\n    },\n    \"access\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2JmZGJhYS0wZGQxLTQxYTUtOTg5My1lYzMxNTNjYjZiNDkiLCJpYXQiOjE2NzA4NzE2MDYsImV4cCI6MTY3MDg3ODgwNn0._rI1PhqN9WqkCYYTpbqgvj9ImuELpwWtjtwWxYvvq74\",\n        \"expires\": \"2022-12-12T21:00:06.880Z\"\n    },\n    \"refresh\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyM2JmZGJhYS0wZGQxLTQxYTUtOTg5My1lYzMxNTNjYjZiNDkiLCJpYXQiOjE2NzA4NzE2MDYsImV4cCI6MTY3MDk1ODAwNn0.LvvNCJEl3_bLy8taVsmRBwLCAq9CpOrIujIFK5V84Kg\",\n        \"expires\": \"2022-12-13T19:00:06.881Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"access\", jsonData.access.token);",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pseudo\": \"user\",\n    \"email\": \"user@mail.com\",\n    \"password\": \"user\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/auth/register",
+              "host": ["{{url}}"],
+              "path": ["auth", "register"]
+            }
+          },
+          "response": [
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"pseudo\": \"user\",\n    \"email\": \"user@mail.com\",\n    \"password\": \"user\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/auth/register",
+                  "host": ["{{url}}"],
+                  "path": ["auth", "register"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"id\": \"a19c4a92-bced-46da-b148-f3dc7b6d7eae\",\n        \"role\": \"user\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"pseudo\": \"user\",\n        \"email\": \"user@mail.com\",\n        \"updatedAt\": \"2022-12-12T19:01:13.145Z\",\n        \"createdAt\": \"2022-12-12T19:01:13.145Z\",\n        \"pictureUrl\": null,\n        \"id_status\": null\n    },\n    \"access\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMTljNGE5Mi1iY2VkLTQ2ZGEtYjE0OC1mM2RjN2I2ZDdlYWUiLCJpYXQiOjE2NzA4NzE2NzMsImV4cCI6MTY3MDg3ODg3M30.oTPCJMMKI2_5-iRCiY5y7LT_Yaz1TTlsjROeNfpnZNU\",\n        \"expires\": \"2022-12-12T21:01:13.261Z\"\n    },\n    \"refresh\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMTljNGE5Mi1iY2VkLTQ2ZGEtYjE0OC1mM2RjN2I2ZDdlYWUiLCJpYXQiOjE2NzA4NzE2NzMsImV4cCI6MTY3MDk1ODA3M30.9Omjs83yown_krlHmY0EcW1cEusyTNrw6ow2GIk36WU\",\n        \"expires\": \"2022-12-13T19:01:13.261Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.collectionVariables.unset(\"access\");"],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/auth/logout",
+              "host": ["{{url}}"],
+              "path": ["auth", "logout"]
+            }
+          },
+          "response": [
+            {
+              "name": "logout",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/auth/logout",
+                  "host": ["{{url}}"],
+                  "path": ["auth", "logout"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Logged out successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "create user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pseudo\": \"User Two\",\n    \"email\": \"usertwo@mail.com\",\n    \"password\": \"usertwo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/user",
+              "host": ["{{url}}"],
+              "path": ["user"]
+            }
+          },
+          "response": [
+            {
+              "name": "create user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"pseudo\": \"User Two\",\n    \"email\": \"usertwo@mail.com\",\n    \"password\": \"usertwo\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/user",
+                  "host": ["{{url}}"],
+                  "path": ["user"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"id\": \"b11f2b12-3746-4ca5-aa45-dad729fd8bbe\",\n    \"role\": \"user\",\n    \"isDeleted\": false,\n    \"isEmailVerified\": false,\n    \"pseudo\": \"User Two\",\n    \"email\": \"usertwo@mail.com\",\n    \"updatedAt\": \"2022-12-13T10:06:17.476Z\",\n    \"createdAt\": \"2022-12-13T10:06:17.476Z\",\n    \"pictureUrl\": null,\n    \"id_status\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "get user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/user/:id",
+              "host": ["{{url}}"],
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "0424501a-0c99-4501-9ac4-eb85a77a09d5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get user",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/user/:id",
+                  "host": ["{{url}}"],
+                  "path": ["user", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "0424501a-0c99-4501-9ac4-eb85a77a09d5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"id\": \"0424501a-0c99-4501-9ac4-eb85a77a09d5\",\n    \"pseudo\": \"userTwo\",\n    \"email\": \"usertwo@mail.com\",\n    \"pictureUrl\": null,\n    \"role\": \"user\",\n    \"isDeleted\": false,\n    \"isEmailVerified\": false,\n    \"createdAt\": \"2022-12-12T19:02:36.049Z\",\n    \"updatedAt\": \"2022-12-12T19:02:36.049Z\",\n    \"id_status\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "get all users",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/user/all",
+              "host": ["{{url}}"],
+              "path": ["user", "all"]
+            }
+          },
+          "response": [
+            {
+              "name": "get all users",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/user/all",
+                  "host": ["{{url}}"],
+                  "path": ["user", "all"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"a19c4a92-bced-46da-b148-f3dc7b6d7eae\",\n        \"pseudo\": \"user\",\n        \"email\": \"user@mail.com\",\n        \"pictureUrl\": null,\n        \"role\": \"user\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"createdAt\": \"2022-12-12T19:01:13.145Z\",\n        \"updatedAt\": \"2022-12-12T19:01:13.145Z\",\n        \"id_status\": null\n    },\n    {\n        \"id\": \"23bfdbaa-0dd1-41a5-9893-ec3153cb6b49\",\n        \"pseudo\": \"Admin\",\n        \"email\": \"admin@mail.com\",\n        \"pictureUrl\": null,\n        \"role\": \"admin\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"createdAt\": \"2022-12-12T19:01:18.654Z\",\n        \"updatedAt\": \"2022-12-12T19:01:18.654Z\",\n        \"id_status\": 0\n    },\n    {\n        \"id\": \"0424501a-0c99-4501-9ac4-eb85a77a09d5\",\n        \"pseudo\": \"userTwo\",\n        \"email\": \"usertwo@mail.com\",\n        \"pictureUrl\": null,\n        \"role\": \"user\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"createdAt\": \"2022-12-12T19:02:36.049Z\",\n        \"updatedAt\": \"2022-12-12T19:02:36.049Z\",\n        \"id_status\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "update user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "pseudo",
+                  "value": "new pseudo",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/mimon/Downloads/pictures/download (1).jpeg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/user/:id",
+              "host": ["{{url}}"],
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "23bfdbaa-0dd1-41a5-9893-ec3153cb6b49"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update user",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "pseudo",
+                      "value": "new pseudo",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/home/mimon/Downloads/pictures/download (1).jpeg",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/user/:id",
+                  "host": ["{{url}}"],
+                  "path": ["user", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "23bfdbaa-0dd1-41a5-9893-ec3153cb6b49"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"23bfdbaa-0dd1-41a5-9893-ec3153cb6b49\",\n        \"pseudo\": \"new pseudo\",\n        \"email\": \"admin@mail.com\",\n        \"pictureUrl\": null,\n        \"role\": \"admin\",\n        \"isDeleted\": false,\n        \"isEmailVerified\": false,\n        \"createdAt\": \"2022-12-12T19:01:18.654Z\",\n        \"updatedAt\": \"2022-12-12T19:03:29.413Z\",\n        \"id_status\": 0\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "delete user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/user/:id",
+              "host": ["{{url}}"],
+              "path": ["user", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "0424501a-0c99-4501-9ac4-eb85a77a09d5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "delete user",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/user/:id",
+                  "host": ["{{url}}"],
+                  "path": ["user", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "0424501a-0c99-4501-9ac4-eb85a77a09d5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [],
+              "cookie": [],
+              "body": "{\n    \"id\": \"0424501a-0c99-4501-9ac4-eb85a77a09d5\",\n    \"pseudo\": \"userTwo\",\n    \"email\": \"usertwo@mail.com\",\n    \"pictureUrl\": null,\n    \"role\": \"user\",\n    \"isDeleted\": true,\n    \"isEmailVerified\": false,\n    \"createdAt\": \"2022-12-12T19:02:36.049Z\",\n    \"updatedAt\": \"2022-12-12T19:03:42.264Z\",\n    \"id_status\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "post",
+      "item": [
+        {
+          "name": "create post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "id_room",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "title",
+                  "value": "PLUS DE CONTENU",
+                  "type": "text"
+                },
+                {
+                  "key": "text",
+                  "value": "Ça c'est une grosse image",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/mimon/Downloads/pictures/download (1).jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/post",
+              "host": ["{{url}}"],
+              "path": ["post"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/post/:id",
+              "host": ["{{url}}"],
+              "path": ["post", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "bddfc6a1-2c6e-4cb3-bcd2-02c4a780e7fa"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find all posts",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"options\": {\n        \"order\": [[\"createdAt\", \"ASC\"]]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/post/all",
+              "host": ["{{url}}"],
+              "path": ["post", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/mimon/Downloads/pictures/download.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/post/:id",
+              "host": ["{{url}}"],
+              "path": ["post", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "526a7890-cd2f-4306-9c98-946bb089b9c3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/post/:id",
+              "host": ["{{url}}"],
+              "path": ["post", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "bddfc6a1-2c6e-4cb3-bcd2-02c4a780e7fa"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "access",
+      "value": ""
+    }
+  ]
+}

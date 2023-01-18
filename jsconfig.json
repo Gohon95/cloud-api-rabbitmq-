@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "CommonJS",
+    "lib": ["es2015", "dom"]
+  },
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
+}
