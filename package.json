@@ -42,7 +42,7 @@
     "postman-to-openapi": "^2.9.0",
     "sequelize": "^6.25.6",
     "sequelize-paginate": "^1.1.6",
-    "swagger-ui-express": "^4.6.0",
+    "swagger-ui-express": "^4.6.2",
     "uuid": "^9.0.0",
     "winston": "^3.8.2",
     "yamljs": "^0.3.0"
